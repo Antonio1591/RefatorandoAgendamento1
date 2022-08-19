@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RefatorandoAgendamento.Modelo
 {
-    public class UsuarioServices
+    public class Usuario
     {
-        public UsuarioServices()
+        public Usuario()
         {
 
         }
-        public UsuarioServices(string nome, string senha, string cNPJ, string nivelAcesso, bool logado)
+        public Usuario(string nome, string senha, string cNPJ, string nivelAcesso, bool logado)
         {
             Nome = nome;
             Senha = senha;
@@ -32,6 +32,7 @@ namespace RefatorandoAgendamento.Modelo
         public string CNPJ { get; private set; }
         public string nivel_usuario { get; private set; }
         public bool Logado { get; private set; }
+
 
     }
 }

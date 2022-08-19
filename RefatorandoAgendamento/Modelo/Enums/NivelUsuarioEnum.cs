@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RefatorandoAgendamento.Modelo
+namespace RefatorandoAgendamento.Modelo.Enums
 {
-    public class Funcionario:Usuario
+    public enum NivelUsuarioEnum
     {
-        public Funcionario()
-        {
-
-        }
-
+        Cliente,
+        Funcionario,
+        Gerente
     }
 }

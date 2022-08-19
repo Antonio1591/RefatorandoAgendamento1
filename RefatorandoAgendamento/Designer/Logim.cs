@@ -16,8 +16,7 @@ namespace RefatorandoAgendamento
     public partial class Logim : Form
     {
         public Logim()
-        {
-  
+        {           
             InitializeComponent();
             
         }
@@ -27,24 +26,23 @@ namespace RefatorandoAgendamento
         {
             var usuario = _usuarioServices.Logim(txtUsuario.Text, txtSenha.Text);
 
-            if(usuario == null )
+            if (usuario == null)
             {
                 MessageBox.Show("Usuário não encontrado", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            
+
 
             usuario.AlterarStatusLogado(true);
-        
+
 
             if (usuario.Logado == true)
-            {  
+            {
+
                 this.DialogResult = DialogResult.Yes;
             }
-        
-        
-        }
 
+        }
           
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RefatorandoAgendamento.Modelo;
 
 namespace RefatorandoAgendamento
 {
@@ -19,9 +20,10 @@ namespace RefatorandoAgendamento
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Logim logim = new Logim();
+            
             if (logim.ShowDialog() == DialogResult.Yes)
-            { 
-                Application.Run(new FrmPrincipal()); 
+            {
+                Application.Run(new Gerenciamento());
             }
         }
     }

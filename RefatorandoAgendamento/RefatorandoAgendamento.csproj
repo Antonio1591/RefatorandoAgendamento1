@@ -107,6 +107,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Designer\cadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\cadastroCliente.Designer.cs">
+      <DependentUpon>cadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designer\cadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\cadastroFuncionario.Designer.cs">
+      <DependentUpon>cadastroFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designer\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,7 @@
     <Compile Include="Designer\Logim.Designer.cs">
       <DependentUpon>Logim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Enums\NivelUsuarioEnum.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Usuario.cs" />
@@ -128,6 +141,15 @@
     <Compile Include="Serviços\FuncionarioServices.cs" />
     <Compile Include="Serviços\ClienteServices.cs" />
     <Compile Include="Serviços\usuarioServices.cs" />
+    <EmbeddedResource Include="Designer\cadastroCliente.resx">
+      <DependentUpon>cadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\cadastroFuncionario.resx">
+      <DependentUpon>cadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\FrmPrincipal.aa.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designer\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,6 +1,6 @@
 ﻿namespace RefatorandoAgendamento.Designer
 {
-    partial class FrmPrincipal
+    partial class Gerenciamento
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gerenciamento));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,76 +42,68 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.agendamentoToolStripMenuItem,
             this.relatórioToolStripMenuItem,
             this.sAIRToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.UseWaitCursor = true;
             // 
             // cadastroToolStripMenuItem
             // 
+            resources.ApplyResources(this.cadastroToolStripMenuItem, "cadastroToolStripMenuItem");
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.funcionarioToolStripMenuItem,
             this.usuarioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // funcionarioToolStripMenuItem
             // 
+            resources.ApplyResources(this.funcionarioToolStripMenuItem, "funcionarioToolStripMenuItem");
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.funcionarioToolStripMenuItem.Text = "Funcionario";
+            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
+            resources.ApplyResources(this.usuarioToolStripMenuItem, "usuarioToolStripMenuItem");
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // agendamentoToolStripMenuItem
             // 
+            resources.ApplyResources(this.agendamentoToolStripMenuItem, "agendamentoToolStripMenuItem");
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
-            this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.agendamentoToolStripMenuItem.Text = "Agendamento";
             // 
             // relatórioToolStripMenuItem
             // 
+            resources.ApplyResources(this.relatórioToolStripMenuItem, "relatórioToolStripMenuItem");
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.relatórioToolStripMenuItem.Text = "Relatório";
             // 
             // sAIRToolStripMenuItem
             // 
+            resources.ApplyResources(this.sAIRToolStripMenuItem, "sAIRToolStripMenuItem");
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
-            this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.sAIRToolStripMenuItem.Text = "SAIR";
             // 
             // lblNome
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(6, 429);
+            resources.ApplyResources(this.lblNome, "lblNome");
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(0, 16);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
+            this.lblNome.UseWaitCursor = true;
             // 
-            // FrmPrincipal
+            // Gerenciamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FrmPrincipal";
-            this.Text = "FrmPrincipal";
+            this.Name = "Gerenciamento";
+            this.UseWaitCursor = true;
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -19,53 +19,9 @@ namespace RefatorandoAgendamento.Serviços
         public string CNPJ { get; private set; }
         public bool Logado { get; private set; }
         public string nivel_usuario { get; private set; }
+        public static Usuario Usuario { get; set; } = null;
 
-        //public Usuario logar(string nome, string senha)
-        //{
-        //    if (nome == null)
-        //    {
-        //        throw new Exception("nome não atribuido");
-        //    }
-
-        //    MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-        //    Usuario usuario = new Usuario();
-
-
-        //    try
-        //    {
-        //        string strsql = "select * from funcionario where nome = @nome and senha= @senha";
-        //        MySqlCommand comando = new MySqlCommand(strsql, con);
-        //        comando.Parameters.AddWithValue("@nome", usuario.Nome);
-        //        comando.Parameters.AddWithValue("@senha", usuario.Senha);
-        //        con.Open();
-        //        comando.ExecuteNonQuery();
-        //        MySqlDataAdapter da = new MySqlDataAdapter(comando);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-
-        //        if (dt.Rows.Count == 1)
-        //        {
-
-        //            return usuario;
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Usuario Não encontrado");
-        //        }
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Windows.Forms.MessageBox.Show("erro ao logar " + ex);
-        //        con.Close();
-        //        return null;
-        //    }
-
-
-        //}
-
-        public UsuarioServices Logim(string nome, string senha)
+        public Usuario Logim(string nome, string senha)
         {
             try
             {
@@ -74,7 +30,7 @@ namespace RefatorandoAgendamento.Serviços
                 Nome = nome;
                 Senha = senha;
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-                string sql = "Select cnpj_usuario,nivel_usuario from usuario where nome_usuario= @nome and senha_usuario=@senha;";
+                string sql = "Select cnpj_usuario,nivel_usuario from usuario where  nome_usuario=@nome and senha_usuario=@senha";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@Nome", nome);
@@ -94,26 +50,58 @@ namespace RefatorandoAgendamento.Serviços
             {
                 return null;
             }
-            UsuarioServices usuario = new UsuarioServices(nome, senha, CNPJ, nivel_usuario,Logado);
-            if (Nome == null && Senha == null && CNPJ == null && nivel_usuario == null )
+
+            Usuario usuario = new Usuario(nome, senha, CNPJ, nivel_usuario, Logado);
+
+            if (Nome == null && Senha == null && CNPJ == null && nivel_usuario == null)
             {
                 MessageBox.Show("Usuario ou Senha incorreto", "Logim", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return null;
             }
-            if(Nome == "" && Senha == "" && CNPJ == ""  && nivel_usuario == "")
+            if (Nome == "" && Senha == "" && CNPJ == "" && nivel_usuario == "")
             {
                 MessageBox.Show("Usuario ou Senha incorreto", "Logim", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return null;
             }
+
+            Usuario = usuario;
             return usuario;
-        
         }
-        
+
         public void sair()
         {
             Nome = null;
             Logado = false;
-            
+
         }
+
+
+        public void cadastroUsuario(string nome, string senha, string cnpj, string nivel_usuario)
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
+                string sql = "INSERT INTO `treino2`.`usuario` (`nome_usuario`, `senha_usuario`, `cnpj_usuario`, `nivel_usuario`) VALUES(@nome, @senha, @cnpj_usuario, @nivel_usuario)";
+
+
+                //"INSERT INTO `treino`.`funcionario` (`Nome`, `CPF`, `nivel_acesso`) VALUES (@Nome,@CPF,@nivel_acesso)";
+                MySqlCommand comando = new MySqlCommand(sql, con);
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@senha", senha);
+                comando.Parameters.AddWithValue("@cnpj_usuario", cnpj);
+                comando.Parameters.AddWithValue("@nivel_usuario", nivel_usuario);
+                con.Open();
+                comando.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possivel cadastrar o Usuario: " + ex);
+
+            }
+        }
+
+
     }
 }

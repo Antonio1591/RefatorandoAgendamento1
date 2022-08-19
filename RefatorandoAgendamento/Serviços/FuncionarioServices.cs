@@ -14,106 +14,51 @@ namespace RefatorandoAgendamento.Serviços
 {
     public class FuncionarioServices
     {
-        public string Nome { get; private set; }
-        public string Senha { get; private set; }
-        public string CPF { get; private set; }
-        public string Nivel_acesso { get; private set; }
-
-        public Boolean Logado { get; private set; }
-
-
-        public Funcionario PegarDadosFuncionario(string nome, string senha)
+        usuarioServices usuario = new usuarioServices();
+        public bool cadastro(string nome,string senha,string cpf, string nivel_acesso)
         {
             try
             {
-                sair();
-
-                Nome = nome;
-                Senha = senha;
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-                string sql = "Select CPF,nivel_acesso from funcionario where nome= @Nome and @Senha";
+                string sql = "INSERT INTO `treino2`.`funcionario` (`Nome`,`Senha`, `CPF`, `nivel_acesso`) VALUES(@nome, @senha, @CPF, @nivel_acesso)";
+                //"INSERT INTO `treino`.`funcionario` (`Nome`, `CPF`, `nivel_acesso`) VALUES (@Nome,@CPF,@nivel_acesso)";
                 MySqlCommand comando = new MySqlCommand(sql, con);
+                if (nome.Length < 4)
+                {
+                    MessageBox.Show("Erro ao cadastrar Funcionario, Nome do funcionario tem que ter mais de 4 digitos", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (senha.Length < 4)
+                {
+                    MessageBox.Show("Erro ao cadastrar Funcionario, senha deve conter mais de 4 digitos", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (nome == "" || senha == "" || cpf == "" || nivel_acesso == "")
+                {
+                    MessageBox.Show("Erro ao cadastrar funcionario não pode haver campos vazios ", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@Nome", nome);
-                comando.Parameters.AddWithValue("@Senha", senha);
+                comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@senha", senha);
+                comando.Parameters.AddWithValue("@CPF", cpf);
+                comando.Parameters.AddWithValue("@nivel_acesso", nivel_acesso);
                 con.Open();
-                comando.CommandType = CommandType.Text;
-                MySqlDataReader dr;
-                dr = comando.ExecuteReader();
-                dr.Read();
-                CPF = dr.GetString(0).ToString();
-                Nivel_acesso = dr.GetString(1).ToString();
+                comando.ExecuteNonQuery();
                 con.Close();
-                //System.Windows.Forms.MessageBox.Show("Test" + Nivel_acesso);
-
+                usuario.cadastroUsuario(nome,senha, cpf, nivel_acesso);
+                MessageBox.Show($"Funcionario {nome} Cadastrado no sistema! ");
+               
+                return true;
             }
-            catch 
+            catch (Exception)
             {
-                return null;
+                MessageBox.Show("Erro ao cadastrar Funcionario", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-            Funcionario funcionario = new Funcionario(nome, senha, CPF, Nivel_acesso);
 
-            return funcionario;
         }
 
-
-
-
-        //public Funcionario logar()
-        //{
-        //    if (Nome == null)
-        //    {
-        //        throw new Exception("Nome não atribuido");
-        //    }
-
-        //    MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-        //    Funcionario funcionario = new Funcionario(Nome, Senha, CPF, Nivel_acesso);
-
-
-        //    try
-        //    {               
-        //        string strSql = "Select * from funcionario where nome = @nome and senha= @senha";
-        //        MySqlCommand comando = new MySqlCommand(strSql, con);
-        //        comando.Parameters.AddWithValue("@nome", funcionario.Nome);
-        //        comando.Parameters.AddWithValue("@senha", funcionario.Senha);
-        //        con.Open();
-        //        comando.ExecuteNonQuery();
-        //        MySqlDataAdapter Da = new MySqlDataAdapter(comando);
-        //        DataTable dt = new DataTable();
-        //        Da.Fill(dt);
-
-        //        if (dt.Rows.Count == 1)
-        //        {
-        //            con.Close();
-        //            funcionario.AlterarStatusLogado(true);
-        //            return funcionario;
-
-        //        }
-        //        else
-        //        {
-        //            throw new Exception();
-        //        }
-              
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Windows.Forms.MessageBox.Show("Erro ao logar " + ex);
-        //        con.Close();
-        //        return null;
-        //    }
-
-        //}
-
-        public void sair()
-        {
-            Nome = null;
-            
-        }
-
-
-
-
-        
     }
 }

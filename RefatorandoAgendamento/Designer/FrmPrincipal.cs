@@ -12,16 +12,30 @@ using RefatorandoAgendamento.Serviços;
 
 namespace RefatorandoAgendamento.Designer
 {
-    public partial class FrmPrincipal : Form
+    public partial class Gerenciamento : Form
     {
-        public FrmPrincipal()
+        public Gerenciamento()
         {
             InitializeComponent();
         }
-        usuarioServices usuario = new usuarioServices();
-        private void lblNome_Click(object sender, EventArgs e)
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            lblNome.Text= usuario.Nome;
+            lblNome.Text = usuarioServices.Usuario.Nome;
+
+        }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadastroFuncionario cadastrofuncionario = new cadastroFuncionario();
+            cadastrofuncionario.Show();
+
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadastroCliente cadastrocliente= new cadastroCliente();
+            cadastrocliente.Show();
         }
     }
 }
