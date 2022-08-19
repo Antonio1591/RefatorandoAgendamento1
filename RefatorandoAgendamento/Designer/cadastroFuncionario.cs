@@ -24,9 +24,12 @@ namespace RefatorandoAgendamento.Designer
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
+          
+         
+            var _func = funcionario.cadastro(txtNome.Text,masktxtSenha.Text,masktxtCPF.Text,combNivelAcesso.Text);
 
-           var _func = funcionario.cadastro(txtNome.Text,txtSenha.Text,txtCPF.Text,combNivelAcesso.Text);
-         if(_func == true)
+
+            if(_func == true)
             {
                 this.Close();
             }
@@ -42,6 +45,15 @@ namespace RefatorandoAgendamento.Designer
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void masktxtCPF_Leave(object sender, EventArgs e)
+        {
+            if (!masktxtCPF.MaskCompleted)
+            {
+                MessageBox.Show("Favor preencher todo o campo! ");
+                masktxtCPF.Text = "";
+            }
+           
         }
     }
     

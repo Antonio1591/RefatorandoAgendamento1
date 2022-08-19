@@ -21,7 +21,9 @@ namespace RefatorandoAgendamento.Designer
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            lblNome.Text = usuarioServices.Usuario.Nome;
+            lblNome.Text = "Funcionario: " + usuarioServices.Usuario.Nome;
+            lblHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
 
         }
 
@@ -37,5 +39,26 @@ namespace RefatorandoAgendamento.Designer
             cadastroCliente cadastrocliente= new cadastroCliente();
             cadastrocliente.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Deseja sair do programa? ","Sair do sistema",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+           
+            if(DialogResult == DialogResult.Yes)
+            { 
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gerenciamento));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,72 +38,83 @@
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNome = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblHora = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.agendamentoToolStripMenuItem,
             this.relatórioToolStripMenuItem,
             this.sAIRToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.UseWaitCursor = true;
             // 
             // cadastroToolStripMenuItem
             // 
-            resources.ApplyResources(this.cadastroToolStripMenuItem, "cadastroToolStripMenuItem");
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.funcionarioToolStripMenuItem,
             this.usuarioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            resources.ApplyResources(this.cadastroToolStripMenuItem, "cadastroToolStripMenuItem");
             // 
             // funcionarioToolStripMenuItem
             // 
-            resources.ApplyResources(this.funcionarioToolStripMenuItem, "funcionarioToolStripMenuItem");
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
+            resources.ApplyResources(this.funcionarioToolStripMenuItem, "funcionarioToolStripMenuItem");
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
-            resources.ApplyResources(this.usuarioToolStripMenuItem, "usuarioToolStripMenuItem");
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            resources.ApplyResources(this.usuarioToolStripMenuItem, "usuarioToolStripMenuItem");
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // agendamentoToolStripMenuItem
             // 
-            resources.ApplyResources(this.agendamentoToolStripMenuItem, "agendamentoToolStripMenuItem");
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
+            resources.ApplyResources(this.agendamentoToolStripMenuItem, "agendamentoToolStripMenuItem");
             // 
             // relatórioToolStripMenuItem
             // 
-            resources.ApplyResources(this.relatórioToolStripMenuItem, "relatórioToolStripMenuItem");
             this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            resources.ApplyResources(this.relatórioToolStripMenuItem, "relatórioToolStripMenuItem");
             // 
             // sAIRToolStripMenuItem
             // 
-            resources.ApplyResources(this.sAIRToolStripMenuItem, "sAIRToolStripMenuItem");
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
+            resources.ApplyResources(this.sAIRToolStripMenuItem, "sAIRToolStripMenuItem");
+            this.sAIRToolStripMenuItem.Click += new System.EventHandler(this.sAIRToolStripMenuItem_Click);
             // 
             // lblNome
             // 
             resources.ApplyResources(this.lblNome, "lblNome");
             this.lblNome.Name = "lblNome";
-            this.lblNome.UseWaitCursor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblHora
+            // 
+            resources.ApplyResources(this.lblHora, "lblHora");
+            this.lblHora.Name = "lblHora";
             // 
             // Gerenciamento
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Gerenciamento";
-            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -121,5 +133,7 @@
         private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sAIRToolStripMenuItem;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblHora;
     }
 }

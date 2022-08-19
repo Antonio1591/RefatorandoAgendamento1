@@ -36,9 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.masktxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.masktxtSenha = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -47,7 +47,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(261, 215);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(151, 39);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -58,7 +58,7 @@
             this.btnCadastro.Location = new System.Drawing.Point(77, 215);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(151, 39);
-            this.btnCadastro.TabIndex = 18;
+            this.btnCadastro.TabIndex = 5;
             this.btnCadastro.Text = "Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
@@ -75,7 +75,7 @@
             this.combNivelAcesso.Location = new System.Drawing.Point(390, 95);
             this.combNivelAcesso.Name = "combNivelAcesso";
             this.combNivelAcesso.Size = new System.Drawing.Size(126, 32);
-            this.combNivelAcesso.TabIndex = 17;
+            this.combNivelAcesso.TabIndex = 4;
             // 
             // label4
             // 
@@ -113,15 +113,7 @@
             this.txtNome.Location = new System.Drawing.Point(96, 42);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(139, 29);
-            this.txtNome.TabIndex = 10;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(351, 35);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(165, 29);
-            this.txtSenha.TabIndex = 12;
+            this.txtNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -133,13 +125,22 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Senha";
             // 
-            // txtCPF
+            // masktxtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(96, 103);
-            this.txtCPF.Mask = "000-000-000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(132, 20);
-            this.txtCPF.TabIndex = 20;
+            this.masktxtCPF.BeepOnError = true;
+            this.masktxtCPF.Location = new System.Drawing.Point(96, 103);
+            this.masktxtCPF.Mask = "000-000-000-00";
+            this.masktxtCPF.Name = "masktxtCPF";
+            this.masktxtCPF.Size = new System.Drawing.Size(132, 20);
+            this.masktxtCPF.TabIndex = 3;
+            this.masktxtCPF.Leave += new System.EventHandler(this.masktxtCPF_Leave);
+            // 
+            // masktxtSenha
+            // 
+            this.masktxtSenha.Location = new System.Drawing.Point(390, 40);
+            this.masktxtSenha.Name = "masktxtSenha";
+            this.masktxtSenha.Size = new System.Drawing.Size(126, 20);
+            this.masktxtSenha.TabIndex = 2;
             // 
             // cadastroFuncionario
             // 
@@ -147,14 +148,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(550, 341);
-            this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.masktxtSenha);
+            this.Controls.Add(this.masktxtCPF);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.combNivelAcesso);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -177,8 +178,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.MaskedTextBox masktxtCPF;
+        private System.Windows.Forms.MaskedTextBox masktxtSenha;
     }
 }
