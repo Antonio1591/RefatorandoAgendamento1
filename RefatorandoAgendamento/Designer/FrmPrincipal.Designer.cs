@@ -78,6 +78,7 @@
             // 
             this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
             resources.ApplyResources(this.agendamentoToolStripMenuItem, "agendamentoToolStripMenuItem");
+            this.agendamentoToolStripMenuItem.Click += new System.EventHandler(this.agendamentoToolStripMenuItem_Click);
             // 
             // relatórioToolStripMenuItem
             // 

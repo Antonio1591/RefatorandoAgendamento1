@@ -20,7 +20,7 @@ namespace RefatorandoAgendamento.Designer
         ClienteServices cliente= new ClienteServices();
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-         var _cliente=  cliente.cadastro(txtNome.Text,maskSenha.Text,maskCPF.Text);
+         var _cliente=  cliente.cadastro(txtNome.Text,maskSenha.Text,maskCPF.Text.Remove(3, 1).Remove(6, 1).Remove(9, 1));
             if(_cliente == true)
             {
                 this.Close();

@@ -107,6 +107,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Designer\Agendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\Agendamento.Designer.cs">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designer\cadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <Compile Include="Serviços\FuncionarioServices.cs" />
     <Compile Include="Serviços\ClienteServices.cs" />
     <Compile Include="Serviços\usuarioServices.cs" />
+    <EmbeddedResource Include="Designer\Agendamento.resx">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designer\cadastroCliente.resx">
       <DependentUpon>cadastroCliente.cs</DependentUpon>
     </EmbeddedResource>

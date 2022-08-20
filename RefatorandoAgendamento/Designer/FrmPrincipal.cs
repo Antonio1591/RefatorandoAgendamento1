@@ -47,9 +47,8 @@ namespace RefatorandoAgendamento.Designer
 
         private void sAIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Deseja sair do programa? ","Sair do sistema",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-           
-            if(DialogResult == DialogResult.Yes)
+            
+            if(MessageBox.Show("Deseja sair do programa? ", "Sair do sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             { 
                 Application.Exit();
             }
@@ -59,6 +58,9 @@ namespace RefatorandoAgendamento.Designer
             }
         }
 
+        private void agendamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

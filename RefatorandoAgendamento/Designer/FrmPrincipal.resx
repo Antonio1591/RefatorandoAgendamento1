@@ -121,6 +121,42 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="funcionarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="funcionarioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Funcionario</value>
+  </data>
+  <data name="usuarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="usuarioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastro</value>
+  </data>
+  <data name="agendamentoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 20</value>
+  </data>
+  <data name="agendamentoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agendamento</value>
+  </data>
+  <data name="relatórioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="relatórioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Relatório</value>
+  </data>
+  <data name="sAIRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="sAIRToolStripMenuItem.Text" xml:space="preserve">
+    <value>SAIR</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -145,42 +181,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastro</value>
-  </data>
-  <data name="funcionarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="funcionarioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Funcionario</value>
-  </data>
-  <data name="usuarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="usuarioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cliente</value>
-  </data>
-  <data name="agendamentoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
-  </data>
-  <data name="agendamentoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agendamento</value>
-  </data>
-  <data name="relatórioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="relatórioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Relatório</value>
-  </data>
-  <data name="sAIRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
-  </data>
-  <data name="sAIRToolStripMenuItem.Text" xml:space="preserve">
-    <value>SAIR</value>
   </data>
   <data name="lblNome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

@@ -26,7 +26,7 @@ namespace RefatorandoAgendamento.Designer
         {
           
          
-            var _func = funcionario.cadastro(txtNome.Text,masktxtSenha.Text,masktxtCPF.Text,combNivelAcesso.Text);
+            var _func = funcionario.cadastro(txtNome.Text,masktxtSenha.Text,masktxtCPF.Text.Remove(3, 1).Remove(6, 1).Remove(9, 1),combNivelAcesso.Text);
 
 
             if(_func == true)
