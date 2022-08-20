@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,6 +9,9 @@ using RefatorandoAgendamento.Serviços;
 using RefatorandoAgendamento.Modelo;
 using Dapper;
 using System.Windows.Forms;
+using RefatorandoAgendamento.Modelo.Enums;
+using static RefatorandoAgendamento.Modelo.Enums.SituacaoEnum;
+using MySql.Data.MySqlClient;
 
 namespace RefatorandoAgendamento.Serviços
 {
@@ -17,10 +20,12 @@ namespace RefatorandoAgendamento.Serviços
         usuarioServices usuario = new usuarioServices();
         public bool cadastro(string nome,string senha,string cpf, string nivel_acesso)
         {
+            string Situacao = situacaoEnum.Ativo.ToString();
+
             try
             {
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-                string sql = "INSERT INTO `treino2`.`funcionario` (`Nome`,`Senha`, `CPF`, `nivel_acesso`) VALUES(@nome, @senha, @CPF, @nivel_acesso)";
+                string sql = $"INSERT INTO `treino2`.`funcionario` (`Func_Nome`,`Func_Senha`,`Func_CPF`,`Func_nivel_acesso`,`Func_Situacao`) VALUES(@nome, @senha, @CPF, @nivel_acesso,@Situacao)";
                 //"INSERT INTO `treino`.`funcionario` (`Nome`, `CPF`, `nivel_acesso`) VALUES (@Nome,@CPF,@nivel_acesso)";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 if (nome.Length < 4)
@@ -44,6 +49,8 @@ namespace RefatorandoAgendamento.Serviços
                 comando.Parameters.AddWithValue("@senha", senha);
                 comando.Parameters.AddWithValue("@CPF", cpf);
                 comando.Parameters.AddWithValue("@nivel_acesso", nivel_acesso);
+                comando.Parameters.AddWithValue("@Situacao", Situacao);
+
                 con.Open();
                 comando.ExecuteNonQuery();
                 con.Close();
@@ -52,9 +59,9 @@ namespace RefatorandoAgendamento.Serviços
                
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar Funcionario", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Erro ao cadastrar Funcionario " + ex, "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

@@ -138,6 +138,7 @@
       <DependentUpon>Logim.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Enums\NivelUsuarioEnum.cs" />
+    <Compile Include="Modelo\Enums\SituacaoEnum.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Usuario.cs" />

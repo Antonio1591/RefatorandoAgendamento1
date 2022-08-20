@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using System.Data;
 using System.Windows.Forms;
+using RefatorandoAgendamento.Modelo.Enums;
+using static RefatorandoAgendamento.Modelo.Enums.SituacaoEnum;
 
 namespace RefatorandoAgendamento.Serviços
 {
@@ -78,12 +80,12 @@ namespace RefatorandoAgendamento.Serviços
 
         public void cadastroUsuario(string nome, string senha, string cnpj, string nivel_usuario)
         {
+            string Situacao = situacaoEnum.Ativo.ToString();
             try
             {
+
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-                string sql = "INSERT INTO `treino2`.`usuario` (`nome_usuario`, `senha_usuario`, `cnpj_usuario`, `nivel_usuario`) VALUES(@nome, @senha, @cnpj_usuario, @nivel_usuario)";
-
-
+                string sql = "INSERT INTO `treino2`.`usuario` (`nome_usuario`, `senha_usuario`, `cnpj_usuario`, `nivel_usuario`,`situacao_usuario`) VALUES(@nome,@senha, @cnpj_usuario,@nivel_usuario,@Situacao)";
                 //"INSERT INTO `treino`.`funcionario` (`Nome`, `CPF`, `nivel_acesso`) VALUES (@Nome,@CPF,@nivel_acesso)";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.Clear();
@@ -91,6 +93,7 @@ namespace RefatorandoAgendamento.Serviços
                 comando.Parameters.AddWithValue("@senha", senha);
                 comando.Parameters.AddWithValue("@cnpj_usuario", cnpj);
                 comando.Parameters.AddWithValue("@nivel_usuario", nivel_usuario);
+                comando.Parameters.AddWithValue("@Situacao", Situacao);
                 con.Open();
                 comando.ExecuteNonQuery();
                 con.Close();
