@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="funcionarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuCadastroFuncionario.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="funcionarioToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuCadastroFuncionario.Text" xml:space="preserve">
     <value>Funcionario</value>
   </data>
   <data name="usuarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -133,28 +133,28 @@
   <data name="usuarioToolStripMenuItem.Text" xml:space="preserve">
     <value>Cliente</value>
   </data>
-  <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuCadastro.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
   </data>
-  <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuCadastro.Text" xml:space="preserve">
     <value>Cadastro</value>
   </data>
-  <data name="agendamentoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuAgendamento.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 20</value>
   </data>
-  <data name="agendamentoToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuAgendamento.Text" xml:space="preserve">
     <value>Agendamento</value>
   </data>
-  <data name="relatórioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuRelatorio.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
   </data>
-  <data name="relatórioToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuRelatorio.Text" xml:space="preserve">
     <value>Relatório</value>
   </data>
-  <data name="sAIRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuSair.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="sAIRToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuSair.Text" xml:space="preserve">
     <value>SAIR</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
@@ -3472,16 +3472,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Gerenciamento</value>
   </data>
-  <data name="&gt;&gt;cadastroToolStripMenuItem.Name" xml:space="preserve">
-    <value>cadastroToolStripMenuItem</value>
+  <data name="&gt;&gt;menuCadastro.Name" xml:space="preserve">
+    <value>menuCadastro</value>
   </data>
-  <data name="&gt;&gt;cadastroToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuCadastro.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;funcionarioToolStripMenuItem.Name" xml:space="preserve">
-    <value>funcionarioToolStripMenuItem</value>
+  <data name="&gt;&gt;menuCadastroFuncionario.Name" xml:space="preserve">
+    <value>menuCadastroFuncionario</value>
   </data>
-  <data name="&gt;&gt;funcionarioToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuCadastroFuncionario.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;usuarioToolStripMenuItem.Name" xml:space="preserve">
@@ -3490,22 +3490,22 @@
   <data name="&gt;&gt;usuarioToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;agendamentoToolStripMenuItem.Name" xml:space="preserve">
-    <value>agendamentoToolStripMenuItem</value>
+  <data name="&gt;&gt;menuAgendamento.Name" xml:space="preserve">
+    <value>menuAgendamento</value>
   </data>
-  <data name="&gt;&gt;agendamentoToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuAgendamento.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;relatórioToolStripMenuItem.Name" xml:space="preserve">
-    <value>relatórioToolStripMenuItem</value>
+  <data name="&gt;&gt;menuRelatorio.Name" xml:space="preserve">
+    <value>menuRelatorio</value>
   </data>
-  <data name="&gt;&gt;relatórioToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuRelatorio.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sAIRToolStripMenuItem.Name" xml:space="preserve">
-    <value>sAIRToolStripMenuItem</value>
+  <data name="&gt;&gt;menuSair.Name" xml:space="preserve">
+    <value>menuSair</value>
   </data>
-  <data name="&gt;&gt;sAIRToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuSair.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">

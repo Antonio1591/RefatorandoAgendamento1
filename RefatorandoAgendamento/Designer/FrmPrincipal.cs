@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RefatorandoAgendamento.Modelo;
+using RefatorandoAgendamento.Modelo.Enums;
 using RefatorandoAgendamento.Serviços;
+using static RefatorandoAgendamento.Modelo.Enums.SituacaoEnum;
 
 namespace RefatorandoAgendamento.Designer
 {
@@ -17,14 +19,22 @@ namespace RefatorandoAgendamento.Designer
         public Gerenciamento()
         {
             InitializeComponent();
+         
+
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblNome.Text = "Funcionario: " + usuarioServices.Usuario.Nome;
             lblHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-
-
+            if(usuarioServices.Usuario.nivel_usuario == NivelUsuarioEnum.Cliente.ToString())
+            {
+                menuCadastro.Visible = false;
+                menuRelatorio.Visible = false;
+            }if(usuarioServices.Usuario.nivel_usuario == NivelUsuarioEnum.Funcionario.ToString())
+            {
+                menuCadastroFuncionario.Visible = false;
+            }
         }
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +49,7 @@ namespace RefatorandoAgendamento.Designer
             cadastroCliente cadastrocliente= new cadastroCliente();
             cadastrocliente.Show();
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -60,7 +71,7 @@ namespace RefatorandoAgendamento.Designer
 
         private void agendamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new Agendamento().Show();
         }
     }
 }

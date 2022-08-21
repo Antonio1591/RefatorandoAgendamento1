@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -50,18 +49,16 @@ namespace RefatorandoAgendamento.Serviços
                 comando.Parameters.AddWithValue("@CPF", cpf);
                 comando.Parameters.AddWithValue("@nivel_acesso", nivel_acesso);
                 comando.Parameters.AddWithValue("@Situacao", Situacao);
-
                 con.Open();
                 comando.ExecuteNonQuery();
                 con.Close();
                 usuario.cadastroUsuario(nome,senha, cpf, nivel_acesso);
                 MessageBox.Show($"Funcionario {nome} Cadastrado no sistema! ");
-               
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Erro ao cadastrar Funcionario " + ex, "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Erro ao cadastrar Funcionario ", "Cadastro Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
