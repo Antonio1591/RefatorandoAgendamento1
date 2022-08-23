@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace RefatorandoAgendamento.Modelo.Enums
 {
-    public class SituacaoEnum
+    public enum SituacaoEnum
     {
-        public enum situacaoEnum
-        {
-            Ativo,
-            Inativo
-        }
+        Ativo,
+        Inativo
+
     }
 }

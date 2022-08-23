@@ -32,7 +32,7 @@ namespace RefatorandoAgendamento.Serviços
                 Nome = nome;
                 Senha = senha;
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
-                string sql = "Select cnpj_usuario,nivel_usuario from usuario where  nome_usuario=@nome and senha_usuario=@senha";
+                string sql = "Select cnpj_usuario,nivel_usuario, idusuario from usuario where  nome_usuario=@nome and senha_usuario=@senha";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.Clear();
                 comando.Parameters.AddWithValue("@Nome", nome);
@@ -44,6 +44,7 @@ namespace RefatorandoAgendamento.Serviços
                 dr.Read();
                 CNPJ = dr.GetString(0).ToString();
                 nivel_usuario = dr.GetString(1).ToString();
+                ID = int.Parse(dr.GetString(2));
                 con.Close();
                 //System.Windows.Forms.MessageBox.Show("Test" + Nivel_acesso);
 
@@ -80,7 +81,7 @@ namespace RefatorandoAgendamento.Serviços
 
         public void cadastroUsuario(string nome, string senha, string cnpj, string nivel_usuario)
         {
-            string Situacao = situacaoEnum.Ativo.ToString();
+            string Situacao = SituacaoEnum.Ativo.ToString();
             try
             {
 

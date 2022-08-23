@@ -21,7 +21,7 @@ namespace RefatorandoAgendamento.Serviços
             try
             {
                 string nivelUsuario = NivelUsuarioEnum.Cliente.ToString();
-                string Situacao = situacaoEnum.Ativo.ToString();
+                string Situacao = SituacaoEnum.Ativo.ToString();
                 MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
                 string sql = "INSERT INTO `treino2`.`Cliente` (`clie_Nome`,`clie_Senha`, `clie_CPF`, `clie_NivelAcesso`,`clie_Situacao`) VALUES(@nome, @senha, @CPF, @nivel_acesso,@situacao)";
                 //"INSERT INTO `treino`.`funcionario` (`Nome`, `CPF`, `nivel_acesso`) VALUES (@Nome,@CPF,@nivel_acesso)";

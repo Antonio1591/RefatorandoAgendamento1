@@ -14,7 +14,7 @@ namespace RefatorandoAgendamento.Modelo
         }
         public Usuario(string nome, string senha, string cNPJ, string nivelAcesso, bool logado)
         {
-            Nome = nome;
+            logim = nome;
             Senha = senha;
             CNPJ = cNPJ;
             nivel_usuario = nivelAcesso;
@@ -27,7 +27,7 @@ namespace RefatorandoAgendamento.Modelo
         }
        
         public int ID { get; private set; }
-        public string Nome { get; private set; }
+        public string logim { get; private set; }
         public string Senha { get; private set; }
         public string CNPJ { get; private set; }
         public string nivel_usuario { get; private set; }

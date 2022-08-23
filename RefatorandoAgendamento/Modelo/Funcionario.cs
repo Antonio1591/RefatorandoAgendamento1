@@ -12,6 +12,12 @@ namespace RefatorandoAgendamento.Modelo
         {
 
         }
+        public  Funcionario(string nome)
+        {
+           this.Nome = nome;
+        }
+
+        public string Nome { get; private  set; }
 
     }
 }

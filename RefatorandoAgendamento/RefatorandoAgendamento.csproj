@@ -107,11 +107,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Designer\Agendamento.cs">
+    <Compile Include="Designer\AgendamentoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Designer\Agendamento.Designer.cs">
-      <DependentUpon>Agendamento.cs</DependentUpon>
+    <Compile Include="Designer\AgendamentoView.Designer.cs">
+      <DependentUpon>AgendamentoView.cs</DependentUpon>
     </Compile>
     <Compile Include="Designer\cadastroCliente.cs">
       <SubType>Form</SubType>
@@ -137,6 +137,7 @@
     <Compile Include="Designer\Logim.Designer.cs">
       <DependentUpon>Logim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Agendamento.cs" />
     <Compile Include="Modelo\Enums\NivelUsuarioEnum.cs" />
     <Compile Include="Modelo\Enums\SituacaoEnum.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
@@ -144,12 +145,13 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serviços\AgendamentoService.cs" />
     <Compile Include="Serviços\conexaoBanco.cs" />
     <Compile Include="Serviços\FuncionarioServices.cs" />
     <Compile Include="Serviços\ClienteServices.cs" />
     <Compile Include="Serviços\usuarioServices.cs" />
-    <EmbeddedResource Include="Designer\Agendamento.resx">
-      <DependentUpon>Agendamento.cs</DependentUpon>
+    <EmbeddedResource Include="Designer\AgendamentoView.resx">
+      <DependentUpon>AgendamentoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designer\cadastroCliente.resx">
       <DependentUpon>cadastroCliente.cs</DependentUpon>

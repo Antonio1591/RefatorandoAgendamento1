@@ -53,6 +53,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(168, 26);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "antonio";
             // 
             // label2
             // 
@@ -93,6 +94,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(168, 20);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.Text = "123456";
             // 
             // Logim
             // 

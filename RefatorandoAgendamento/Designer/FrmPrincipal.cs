@@ -19,13 +19,11 @@ namespace RefatorandoAgendamento.Designer
         public Gerenciamento()
         {
             InitializeComponent();
-         
-
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-            lblNome.Text = "Funcionario: " + usuarioServices.Usuario.Nome;
+        {FuncionarioServices funcionario= new FuncionarioServices();
+            lblNome.Text = "Funcionario: " + usuarioServices.Usuario.logim;
             lblHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             if(usuarioServices.Usuario.nivel_usuario == NivelUsuarioEnum.Cliente.ToString())
             {
@@ -35,6 +33,7 @@ namespace RefatorandoAgendamento.Designer
             {
                 menuCadastroFuncionario.Visible = false;
             }
+
         }
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +70,7 @@ namespace RefatorandoAgendamento.Designer
 
         private void agendamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Agendamento().Show();
+            new AgendamentoView().Show();
         }
     }
 }

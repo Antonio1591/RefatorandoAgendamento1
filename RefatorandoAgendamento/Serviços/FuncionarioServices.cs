@@ -17,9 +17,12 @@ namespace RefatorandoAgendamento.Serviços
     public class FuncionarioServices
     {
         usuarioServices usuario = new usuarioServices();
-        public bool cadastro(string nome,string senha,string cpf, string nivel_acesso)
+        Funcionario funcionaio = new Funcionario();
+
+
+        public bool cadastro(string nome, string senha, string cpf, string nivel_acesso)
         {
-            string Situacao = situacaoEnum.Ativo.ToString();
+            string Situacao = SituacaoEnum.Ativo.ToString();
 
             try
             {
@@ -52,7 +55,7 @@ namespace RefatorandoAgendamento.Serviços
                 con.Open();
                 comando.ExecuteNonQuery();
                 con.Close();
-                usuario.cadastroUsuario(nome,senha, cpf, nivel_acesso);
+                usuario.cadastroUsuario(nome, senha, cpf, nivel_acesso);
                 MessageBox.Show($"Funcionario {nome} Cadastrado no sistema! ");
                 return true;
             }
@@ -62,7 +65,43 @@ namespace RefatorandoAgendamento.Serviços
                 return false;
             }
 
+
         }
 
+        //public List<Funcionario> BuscarFuncionario()
+        //{
+        //    var listaFuncionario = new List<Funcionario>();
+        //    var l1 = new Funcionario();
+        //    MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
+        //    con.Open();
+
+        //    string sql = $"Select Func_Nome AS FuncionarioAgendamento from Funcionario";
+        //    MySqlCommand comando = new MySqlCommand(sql, con);
+        //    MySqlDataReader reader = comando.ExecuteReader();
+
+        //    while (reader.Read())
+        //    {
+        //        string row =
+        //            {
+        //              reader.GetString(0)
+        //            };
+
+        //        l1.Nome = row.ToString();
+        //        listaFuncionario.Add(l1);
+        //    }
+
+        //    return listaFuncionario;
+        //}
+
+
+        public IEnumerable<Funcionario> BuscarFuncionario()
+        {
+
+            MySqlConnection con = new MySqlConnection(conexaoBanco.conexao());
+
+            var sql = $"Select Func_Nome AS Nome from Funcionario";
+
+            return con.Query<Funcionario>(sql);
+        }
     }
 }
