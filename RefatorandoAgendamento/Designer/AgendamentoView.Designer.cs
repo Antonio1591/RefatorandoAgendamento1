@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dataAgendamentoGridView = new System.Windows.Forms.DataGridView();
-            this.FuncionarioAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClienteAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HorarioDisponivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SituacaoAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncionarioComboBox = new System.Windows.Forms.ComboBox();
             this.DiaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SituacaoComboBox = new System.Windows.Forms.ComboBox();
@@ -43,6 +38,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.HoraComboBox = new System.Windows.Forms.ComboBox();
             this.btnInserir = new System.Windows.Forms.Button();
+            this.FuncionarioAgendamento = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ClienteAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorarioDisponivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SituacaoAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataAgendamentoGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,41 +60,8 @@
             this.dataAgendamentoGridView.Name = "dataAgendamentoGridView";
             this.dataAgendamentoGridView.Size = new System.Drawing.Size(704, 240);
             this.dataAgendamentoGridView.TabIndex = 0;
-            // 
-            // FuncionarioAgendamento
-            // 
-            this.FuncionarioAgendamento.HeaderText = "Funcionario";
-            this.FuncionarioAgendamento.Name = "FuncionarioAgendamento";
-            this.FuncionarioAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FuncionarioAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClienteAgendamento
-            // 
-            this.ClienteAgendamento.HeaderText = "Cliente agendado";
-            this.ClienteAgendamento.Name = "ClienteAgendamento";
-            this.ClienteAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClienteAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClienteAgendamento.Visible = false;
-            // 
-            // DiaColumn
-            // 
-            this.DiaColumn.HeaderText = "Dia Agendamento";
-            this.DiaColumn.Name = "DiaColumn";
-            this.DiaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // HorarioDisponivel
-            // 
-            this.HorarioDisponivel.HeaderText = "Horarios Disponiveis";
-            this.HorarioDisponivel.Name = "HorarioDisponivel";
-            this.HorarioDisponivel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SituacaoAgendamento
-            // 
-            this.SituacaoAgendamento.HeaderText = "Situação Agendamento";
-            this.SituacaoAgendamento.Name = "SituacaoAgendamento";
-            this.SituacaoAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SituacaoAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataAgendamentoGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataAgendamentoGridView_CellContentClick);
+            this.dataAgendamentoGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataAgendamentoGridView_DataBindingComplete);
             // 
             // FuncionarioComboBox
             // 
@@ -178,6 +145,40 @@
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
+            // FuncionarioAgendamento
+            // 
+            this.FuncionarioAgendamento.HeaderText = "Funcionario";
+            this.FuncionarioAgendamento.Name = "FuncionarioAgendamento";
+            this.FuncionarioAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ClienteAgendamento
+            // 
+            this.ClienteAgendamento.HeaderText = "Cliente agendado";
+            this.ClienteAgendamento.Name = "ClienteAgendamento";
+            this.ClienteAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClienteAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClienteAgendamento.Visible = false;
+            // 
+            // DiaColumn
+            // 
+            this.DiaColumn.HeaderText = "Dia Agendamento";
+            this.DiaColumn.Name = "DiaColumn";
+            this.DiaColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // HorarioDisponivel
+            // 
+            this.HorarioDisponivel.HeaderText = "Horarios Disponiveis";
+            this.HorarioDisponivel.Name = "HorarioDisponivel";
+            this.HorarioDisponivel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SituacaoAgendamento
+            // 
+            this.SituacaoAgendamento.HeaderText = "Situação Agendamento";
+            this.SituacaoAgendamento.Name = "SituacaoAgendamento";
+            this.SituacaoAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SituacaoAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // AgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,11 +206,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataAgendamentoGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuncionarioAgendamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteAgendamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioDisponivel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SituacaoAgendamento;
         private System.Windows.Forms.ComboBox FuncionarioComboBox;
         private System.Windows.Forms.DateTimePicker DiaDateTimePicker;
         private System.Windows.Forms.ComboBox SituacaoComboBox;
@@ -219,5 +215,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox HoraComboBox;
         private System.Windows.Forms.Button btnInserir;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FuncionarioAgendamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteAgendamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioDisponivel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SituacaoAgendamento;
     }
 }

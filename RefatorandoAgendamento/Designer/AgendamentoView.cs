@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RefatorandoAgendamento.Serviços;
-
+using RefatorandoAgendamento.Modelo.Enums;
 namespace RefatorandoAgendamento.Designer
 {
     public partial class AgendamentoView : Form
@@ -40,6 +40,10 @@ namespace RefatorandoAgendamento.Designer
 
                 HoraComboBox.Items.Add(hora);
             }
+     
+
+            SituacaoComboBox.Items.Add(SituacaoEnum.Ativo);
+            SituacaoComboBox.Items.Add(SituacaoEnum.Inativo);
         }
 
 
@@ -51,6 +55,17 @@ namespace RefatorandoAgendamento.Designer
             foreach (var Funcionario in Funcionarios)
             {
                 FuncionarioComboBox.Items.Add(Funcionario.Nome);
+            }
+
+            var agendamento = _agendamentoService.BuscarAgendamentos();
+
+            dataAgendamentoGridView.AutoGenerateColumns = false;
+
+            FuncionarioAgendamento.DataPropertyName = "Funcionario";
+
+            foreach (var FuncionarioAgendamento in agendamento)
+            {
+                this.FuncionarioAgendamento.Items.Add(FuncionarioAgendamento.Funcionario);
             }
         }
 
@@ -64,6 +79,17 @@ namespace RefatorandoAgendamento.Designer
             _agendamentoService.InserirDados(FuncionarioComboBox.Text, usuarioServices.Usuario.ID, dataSelecionada);
 
             MessageBox.Show("Agendamento realizado com sucesso!", "Agendamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dataAgendamentoGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void dataAgendamentoGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
         }
     }
 }
