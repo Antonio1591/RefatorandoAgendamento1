@@ -40,7 +40,7 @@ namespace RefatorandoAgendamento.Designer
 
                 HoraComboBox.Items.Add(hora);
             }
-     
+
 
             SituacaoComboBox.Items.Add(SituacaoEnum.Ativo);
             SituacaoComboBox.Items.Add(SituacaoEnum.Inativo);
@@ -60,13 +60,32 @@ namespace RefatorandoAgendamento.Designer
             var agendamento = _agendamentoService.BuscarAgendamentos();
 
             dataAgendamentoGridView.AutoGenerateColumns = false;
-
-            FuncionarioAgendamento.DataPropertyName = "Funcionario";
+            // Nome do Funcionario na grady viwer
+            //FuncionarioAgendamento.DataPropertyName = "Funcionario";
+            //ClienteAgendamento.DataPropertyName = "Cliente_Agendado";
+            //DiaColumn.DataPropertyName = "Horario_Agendamento";
+            //HorarioDisponivel.DataPropertyName = "Horario_agendamento";
+            //SituacaoAgendamento.DataPropertyName = "Situacao_agendamento";
+            int celula=0;
+            dataAgendamentoGridView.RowCount = 1;
 
             foreach (var FuncionarioAgendamento in agendamento)
             {
-                this.FuncionarioAgendamento.Items.Add(FuncionarioAgendamento.Funcionario);
+
+
+                this.FuncionarioAgendamento.DataGridView.Rows.Add(FuncionarioAgendamento.Funcionario);
+                ClienteAgendamento.DataGridView.Rows[celula].Cells[1].Value = FuncionarioAgendamento.ClienteNome;
+                DiaColumn.DataGridView.Rows[celula].Cells[2].Value = FuncionarioAgendamento.DataAgendamento.Day.ToString();
+                HorarioDisponivel.DataGridView.Rows[celula].Cells[3].Value = FuncionarioAgendamento.DataAgendamento.Hour.ToString();
+                SituacaoAgendamento.DataGridView.Rows[celula].Cells[4].Value = FuncionarioAgendamento.Situacao;
+
+                //  SetValues(FuncionarioAgendamento.DataAgendamento.Day.ToString());
+                celula++;
+
             }
+
+
+
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -76,14 +95,14 @@ namespace RefatorandoAgendamento.Designer
 
             DateTime dataSelecionada = new DateTime(dia.Year, dia.Month, dia.Day, hora.Hour, hora.Minute, hora.Second);
 
-            _agendamentoService.InserirDados(FuncionarioComboBox.Text, usuarioServices.Usuario.ID, dataSelecionada);
+            _agendamentoService.InserirDados(FuncionarioComboBox.Text, usuarioServices.Usuario.logim, dataSelecionada);
 
             MessageBox.Show("Agendamento realizado com sucesso!", "Agendamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dataAgendamentoGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 

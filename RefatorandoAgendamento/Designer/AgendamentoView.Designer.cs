@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.HoraComboBox = new System.Windows.Forms.ComboBox();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.FuncionarioAgendamento = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.FuncionarioAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteAgendamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HorarioDisponivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,6 +150,7 @@
             this.FuncionarioAgendamento.HeaderText = "Funcionario";
             this.FuncionarioAgendamento.Name = "FuncionarioAgendamento";
             this.FuncionarioAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FuncionarioAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClienteAgendamento
             // 
@@ -157,7 +158,6 @@
             this.ClienteAgendamento.Name = "ClienteAgendamento";
             this.ClienteAgendamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ClienteAgendamento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClienteAgendamento.Visible = false;
             // 
             // DiaColumn
             // 
@@ -168,7 +168,7 @@
             // 
             // HorarioDisponivel
             // 
-            this.HorarioDisponivel.HeaderText = "Horarios Disponiveis";
+            this.HorarioDisponivel.HeaderText = "Horarios";
             this.HorarioDisponivel.Name = "HorarioDisponivel";
             this.HorarioDisponivel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox HoraComboBox;
         private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.DataGridViewComboBoxColumn FuncionarioAgendamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuncionarioAgendamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteAgendamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn HorarioDisponivel;

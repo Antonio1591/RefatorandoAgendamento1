@@ -13,7 +13,7 @@ namespace RefatorandoAgendamento.Serviços
         public IEnumerable<Agendamento> BuscarAgendamentos()
         {
             string sql = @"SELECT  Funcionario_Agendamento AS Funcionario, 
-                            Cliente_Agendado AS ClienteId, 
+                            Cliente_Agendado AS ClienteNome, 
                             Horario_Agendamento AS DataAgendamento, 
                             Situacao_Agendamento AS  Situacao 
                             FROM agendamento";
@@ -23,12 +23,12 @@ namespace RefatorandoAgendamento.Serviços
 
         }
 
-        public void InserirDados(string funcionario, int clienteId, DateTime horarioAgendamento)
+        public void InserirDados(string funcionario, string clienteNome, DateTime horarioAgendamento)
         {
             try
             {
                 MySqlConnection conn = new MySqlConnection(conexaoBanco.conexao());
-                var sql = $"INSERT INTO `agendamento` (`Funcionario_Agendamento`, `Cliente_Agendado`, `Horario_Agendamento`, `Situacao_Agendamento`) VALUES('{funcionario}', '{clienteId}', '{horarioAgendamento:yyyy-MM-dd HH:mm:ss}', '0')";
+                var sql = $"INSERT INTO `agendamento` (`Funcionario_Agendamento`, `Cliente_Agendado`, `Horario_Agendamento`, `Situacao_Agendamento`) VALUES('{funcionario}', '{clienteNome}', '{horarioAgendamento:yyyy-MM-dd HH:mm:ss}', '0')";
 
                 conn.Execute(sql);
             }

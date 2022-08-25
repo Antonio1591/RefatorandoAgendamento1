@@ -11,7 +11,7 @@ namespace RefatorandoAgendamento.Modelo
     {
 
         public string Funcionario { get; set; }
-        public int ClienteId { get; set; }
+        public string ClienteNome { get; set; }
         public DateTime DataAgendamento { get; set; }
         public SituacaoEnum Situacao { get; set; }
     }
